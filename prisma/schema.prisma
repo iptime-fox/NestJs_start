@@ -59,7 +59,6 @@ model Product{
   sales       Sale[]
   purchases   Purchase[]
 
-
   @@index([userId])
 }
 
@@ -130,7 +129,6 @@ model Sale{
   product     Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
   productId    Int
 
-
   @@index([userId])
   @@index([productId])
 }
@@ -143,7 +141,6 @@ model Purchase{
   userId      Int
   product     Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
   productId    Int
-
 
   @@index([userId])
   @@index([productId])
@@ -174,7 +171,6 @@ model Stream {
   userId      Int
   messages    Message[]
 
-
   @@index([userId])
 }
 
@@ -187,7 +183,6 @@ model Message {
   message     String   @db.MediumText
   stream      Stream   @relation(fields: [streamId], references: [id], onDelete: Cascade)
   streamId      Int
-
 
   @@index([userId])
   @@index([streamId])
